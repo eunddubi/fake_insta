@@ -1,6 +1,6 @@
 <h1>글을 쓰시오</h1>
 <br />
-<form action="/board" method="POST">
+<form action="/board" method="POST" enctype="multipart/form-data">
   <div class="form-group">
     <label for="exampleFormControlInput1">작성자</label>
     <input type="test" name="post[user]" class="form-control" id="exampleFormControlInput1" placeholder="이름을 입력하시오.">
@@ -13,12 +13,14 @@
     <label for="exampleFormControlTextarea1">내용</label>
     <textarea class="form-control" name="post[content]" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
+  <input type="file" name="post[postimage]" />
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <button type="submit" class="btn btn-dark">전송</button>
 </form>
 
-<!-- <%= form_tag("/board", method: "post") do %> -->
-  <!-- <%= text_field_tag("title") %> -->
-  <!-- <%= text_area_tag("content") %> -->
+<!-- <%= form_tag("/board", method: "post", multipart: true) do %> --> -->
+  <!-- <%= text_field_tag("post[title]") %> -->
+  <!-- <%= text_area_tag("post[content]") %> -->
+  <!-- <%= file_field_tag("post[postimage]") %> -->
   <!-- <%= submit_tag %> -->
 <!-- <% end %> -->

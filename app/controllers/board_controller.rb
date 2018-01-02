@@ -42,6 +42,6 @@ class BoardController < ApplicationController
 
   #strong parameter
   def post_params
-    params.require(:post).permit(:user, :title, :content)
+    params.require(:post).permit(:user, :title, :content, :postimage)
   end
 end

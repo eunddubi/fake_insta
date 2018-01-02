@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20180102064227) do
     t.string   "user"
     t.string   "title"
     t.text     "content"
+    t.string   "postimage"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
