@@ -1,2 +1,19 @@
-<h1>Board#edit</h1>
-<p>Find me in app/views/board/edit.html.erb</p>
+<h1>글을 수정하시오.</h1>
+<br />
+<form action="/board/<%= @post.id %>" method="POST">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">작성자</label>
+    <input type="text" name="user" class="form-control" id="exampleFormControlInput1" value="<%= @post.user %>">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">제목</label>
+    <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="<%= @post.title %>">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">내용</label>
+    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"><%= @post.content %></textarea>
+  </div>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="put" />
+  <button type="submit" class="btn btn-dark">전송</button>
+</form>

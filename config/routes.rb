@@ -5,13 +5,14 @@ Rails.application.routes.draw do
 
   get 'board/new'
 
-  get 'board/create'
+  #특정한 행동(ex.생성, 수정)을 하는 경우, get으로 접근하지 못하게 하기위해 post, put, delete등을 사용하여 토큰을 사용
+  post 'board/create'
 
   get 'board/show/:id' => 'board#show'
 
-  get 'board/edit'
+  get 'board/:id/edit' => 'board#edit'
 
-  get 'board/update'
+  put 'board/:id' => 'board#update'
 
   get 'board/destroy'
 

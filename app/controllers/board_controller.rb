@@ -20,9 +20,16 @@ class BoardController < ApplicationController
   end
 
   def edit
+    @post = Board.find(params[:id])
   end
 
   def update
+    Board.find(params[:id]).update(
+      user: params[:user],
+      title: params[:title],
+      content: params[:content]
+    )
+    redirect_to '/'
   end
 
   def destroy

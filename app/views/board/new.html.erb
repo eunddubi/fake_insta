@@ -1,6 +1,6 @@
 <h1>글을 쓰시오</h1>
 <br />
-<form action="/board/create">
+<form action="/board/create" method="POST">
   <div class="form-group">
     <label for="exampleFormControlInput1">작성자</label>
     <input type="test" name="user" class="form-control" id="exampleFormControlInput1" placeholder="이름을 입력하시오.">
@@ -13,5 +13,6 @@
     <label for="exampleFormControlTextarea1">내용</label>
     <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <button type="submit" class="btn btn-dark">전송</button>
 </form>
