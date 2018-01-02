@@ -33,5 +33,7 @@ class BoardController < ApplicationController
   end
 
   def destroy
+    Board.find(params[:id]).destroy()
+    redirect_to '/'
   end
 end

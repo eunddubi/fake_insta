@@ -10,6 +10,7 @@
       <th scope="col">제목</th>
       <th scope="col">내용</th>
       <th scope="col">수정</th>
+      <th scope="col">삭제</th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +21,7 @@
       <td><a href="/board/show/<%=b.id%>"><%=b.title%></a></td>
       <td><%=b.content%></td>
       <td><a href="/board/<%=b.id%>/edit"><i class="fas fa-edit"></i></a></td>
+      <td><a href="/board/<%=b.id%>" data-method="delete" data-confirm="정말로 삭제하시겠습니까?"><i class="fas fa-times"></i></a></td>
     </tr>
     <% end %>
 
