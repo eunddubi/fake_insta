@@ -1,20 +1,26 @@
 Rails.application.routes.draw do
+  resources :blogs
   root 'board#index'
 
-  get 'board/index'
+  resources :board
 
-  get 'board/new'
+###############################################################
+  # get 'board/index' => 'board#index'
+  #
+  # get 'board/new' => 'board#new'
+  #
+  # #특정한 행동(ex.생성, 수정)을 하는 경우, get으로 접근하지 못하게 하기위해 post, put, delete등을 사용하여 토큰을 사용
+  # post 'board/create' => 'board#create'
+  #
+  # get 'board/show/:id' => 'board#show'
+  #
+  # get 'board/:id/edit' => 'board#edit'
+  #
+  # put 'board/:id' => 'board#update'
+  #
+  # delete 'board/:id' => 'board#destroy'
+##################################################################
 
-  #특정한 행동(ex.생성, 수정)을 하는 경우, get으로 접근하지 못하게 하기위해 post, put, delete등을 사용하여 토큰을 사용
-  post 'board/create'
-
-  get 'board/show/:id' => 'board#show'
-
-  get 'board/:id/edit' => 'board#edit'
-
-  put 'board/:id' => 'board#update'
-
-  delete 'board/:id' => 'board#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

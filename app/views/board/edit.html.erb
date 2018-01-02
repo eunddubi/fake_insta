@@ -3,15 +3,15 @@
 <form action="/board/<%= @post.id %>" method="POST">
   <div class="form-group">
     <label for="exampleFormControlInput1">작성자</label>
-    <input type="text" name="user" class="form-control" id="exampleFormControlInput1" value="<%= @post.user %>">
+    <input type="text" name="post[user]" class="form-control" id="exampleFormControlInput1" value="<%= @post.user %>">
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">제목</label>
-    <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="<%= @post.title %>">
+    <input type="text" name="post[title]" class="form-control" id="exampleFormControlInput1" value="<%= @post.title %>">
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1">내용</label>
-    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"><%= @post.content %></textarea>
+    <textarea class="form-control" name="post[content]" id="exampleFormControlTextarea1" rows="3"><%= @post.content %></textarea>
   </div>
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="hidden" name="_method" value="put" />
