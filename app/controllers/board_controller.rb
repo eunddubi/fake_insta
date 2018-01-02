@@ -15,7 +15,8 @@ class BoardController < ApplicationController
     redirect_to '/'
   end
 
-  def post
+  def show
+    @post = Board.find(params[:id])
   end
 
   def edit
